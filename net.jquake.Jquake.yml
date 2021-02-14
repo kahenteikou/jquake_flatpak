@@ -1,0 +1,31 @@
+{
+  "id":"net.jquake.Jquake",
+  "branch":"0.0.1",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "20.08",
+  "sdk" : "org.freedesktop.Sdk",
+  "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.openjdk11" ],
+  "command":"jquake",
+  "modules" : [ {
+    "name" : "openjdk",
+    "buildsystem" : "simple",
+    "build-commands" : [ "/usr/lib/sdk/openjdk11/install.sh" ]
+  }, {
+    "name" : "jquake",
+    "buildsystem" : "simple",
+    "sources":[{
+      "type":"archive",
+      "url":"https://fleneindre.github.io/downloads/JQuake_1.6.1_linux.zip",
+      "sha256":"f46d8f2080bbff3d40c384809f0161cc2f112568856555c2cc68853898ec865b"
+    }],
+    "build-commands": [
+      "ls -la"
+      ,
+      "sed -i JQuake.sh -e 's|\\[JAR FOLDER\\]|/app/share/|g'",
+      "cp -ar . /app/share/",
+      "mkdir -p /app/bin",
+      "cp JQuake.sh /app/bin/jquake",
+      "chmod +x /app/bin/jquake"]
+  } ],
+  "finish-args" : [ "--env=PATH=/app/jre/bin:/usr/bin" ]
+}
