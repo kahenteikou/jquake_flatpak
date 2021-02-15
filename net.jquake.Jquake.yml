@@ -22,12 +22,18 @@
       "type":"file",
       "url":"https://jquake.net/sources/favicon.png",
       "sha256":"eb276946f48c603372ba127611e9d7bb4a336fa66058b52633feac6bfb4617ac"
+    },
+    {
+      "type":"file",
+      "path":"net.jquake.Jquake.desktop",
     }],
     "build-commands": [
       "unzip -o JQuake_1.6.1_linux.zip",
       "ls -la .",
       "mkdir -p /app/share/icons/hicolor/512x512/apps/",
+      "mkdir -p /app/share/applications/",
       "mv favicon.png /app/share/icons/hicolor/512x512/apps/net.jquake.Jquake.png",
+      "mv net.jquake.Jquake.desktop /app/share/applications/net.jquake.Jquake.desktop",
       "rm -rf JQuake_1.6.1_linux.zip",
       "sed -i JQuake.sh -e 's|\\[JAR FOLDER\\]|/app/share/|g'",
       "mkdir -p /app/share/",
