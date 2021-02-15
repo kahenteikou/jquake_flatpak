@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=JQuake
-Exec=net.jquake.Jquake
+Exec=flatpak runnet.jquake.Jquake
 Type=Application
 Icon=net.jquake.Jquake
