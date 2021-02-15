@@ -42,5 +42,5 @@
       "cp JQuake.sh /app/bin/jquake",
       "chmod +x /app/bin/jquake"]
   } ],
-  "finish-args" : [ "--env=PATH=/app/jre/bin:/usr/bin" ,"--share=network","--share=ipc","--socket=x11","--socket=wayland","--filesystem=~/Library/Application\ Support/JQuake/"]
+  "finish-args" : [ "--env=PATH=/app/jre/bin:/usr/bin" ,"--share=network","--share=ipc","--socket=x11","--socket=wayland","--socket=pulseaudio","--device=dri","--filesystem=~/Library/Application\ Support/JQuake/"]
 }
